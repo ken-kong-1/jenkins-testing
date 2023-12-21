@@ -6,5 +6,19 @@ pipeline {
                 sh 'node --version'
             }
         }
+
+        stage('Sanity check') {
+            steps {
+                input "Does the staging environment look ok?"
+            }
+        }
+
+
+        stage('After') {
+            steps {
+                echo "Done after confirming"
+            }
+        }
+
     }
 }
